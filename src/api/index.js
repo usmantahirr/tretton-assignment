@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-import { errorResponseHandler } from './interceptors';
+import { errorResponseHandler, successResponseHandler } from './interceptors';
 import { API_BASE_URL } from '../config';
 
 const contentType = {
@@ -29,7 +29,7 @@ export default class API {
     };
 
     this.instance = axios.create(this.config);
-    this.instance.interceptors.response.use(errorResponseHandler);
+    this.instance.interceptors.response.use(successResponseHandler, errorResponseHandler);
   }
 
   get(url, id, params) {

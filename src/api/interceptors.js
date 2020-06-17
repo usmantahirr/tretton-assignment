@@ -23,3 +23,5 @@ export const errorResponseHandler = (error) => {
     throw errorObject(error);
   }
 };
+
+export const successResponseHandler = (response) => response;
