@@ -8,9 +8,7 @@ const HomePage = ({ ninjas }) => (
     <div id="ninjas" className="u-center-text u-margin-bottom-big">
       <h2 className="heading-secondary">Our Ninjas</h2>
     </div>
-    <div className="row">
-      <Filters />
-    </div>
+
     <NinjaList ninjas={ninjas} />
   </SingleColumnTemplate>
 );

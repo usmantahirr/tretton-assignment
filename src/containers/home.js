@@ -6,9 +6,8 @@ import ErrorContext from '../shared/modules/error/context';
 import { getAllNinjas } from '../service';
 
 const defaultFilters = {
-  page: 0,
-  size: 10,
-  length: 0,
+  pageNumber: 0,
+  pageSize: 12,
 };
 
 const HomeContainer = () => {

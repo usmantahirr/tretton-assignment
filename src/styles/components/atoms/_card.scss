@@ -5,6 +5,11 @@
   position: relative;
   height: 52rem;
 
+  &__social-icons {
+    margin-top: 1em;
+    font-size: 1.3em;
+  }
+
   &__side {
     height: 52rem;
     transition: all 0.8s ease;
@@ -36,7 +41,6 @@
     transform: rotateY(0);
   }
 
-  // FRONT SIDE STYLING
   &__picture {
     background-size: cover;
     height: 23rem;
@@ -73,7 +77,8 @@
   }
 
   &__details {
-    padding: 3rem;
+    padding: 1rem;
+    text-align: center;
 
     ul {
       list-style: none;
@@ -82,7 +87,7 @@
 
       li {
         text-align: center;
-        font-size: 1.5rem;
+        font-size: 1.3rem;
         padding: 1rem;
 
         &:not(:last-child) {
@@ -90,32 +95,6 @@
         }
       }
     }
-  }
-
-  // FRONT SIDE STYLING
-  &__cta {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 90%;
-    text-align: center;
-  }
-
-  &__price-box {
-    text-align: center;
-    color: $color-white;
-    margin-bottom: 8rem;
-  }
-
-  &__price-only {
-    font-size: 1.4rem;
-    text-transform: uppercase;
-  }
-
-  &__price-value {
-    font-size: 6rem;
-    font-weight: 100;
   }
 
   //@include respond(tab-port) {
@@ -142,24 +121,6 @@
 
     &__details {
       padding: 1rem 3rem;
-    }
-
-    // FRONT SIDE STYLING
-    &__cta {
-      position: relative;
-      top: 0%;
-      left: 0;
-      transform: translate(0);
-      width: 100%;
-      padding: 7rem 4rem 4rem 4rem;
-    }
-
-    &__price-box {
-      margin-bottom: 3rem;
-    }
-
-    &__price-value {
-      font-size: 4rem;
     }
   }
 }
