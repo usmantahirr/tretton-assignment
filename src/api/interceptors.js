@@ -24,4 +24,19 @@ export const errorResponseHandler = (error) => {
   }
 };
 
-export const successResponseHandler = (response) => response;
+export function successResponseHandler(response) {
+  const { data } = response;
+  const res = {
+    data: data.data,
+  };
+
+  if (data.pageNumber !== undefined) {
+    res.pageDetails = {
+      pageNumber: data.pageNumber,
+      pageSize: data.pageSize,
+      length: data.length,
+    };
+  }
+
+  return res;
+}

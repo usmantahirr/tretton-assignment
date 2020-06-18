@@ -1,8 +1,9 @@
 import React from 'react';
+import Header from '../atoms/header';
 
 const SingleColumnTemplate = ({ children }) => (
   <div>
-    <h1>Single Column Layout</h1>
+    <Header primaryText="Tretton37" secondaryText="We've got this." />
     {children}
   </div>
 );
