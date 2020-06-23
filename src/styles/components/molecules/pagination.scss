@@ -1,0 +1,44 @@
+.pagination {
+  margin: 3rem;
+  text-align: center;
+
+  &__button {
+    margin: 0.5rem;
+    font-size: 1.5rem;
+    padding: 10px 15px;
+    cursor: pointer;
+    background: $color-white;
+    border: 1px solid $color-primary-light;
+    border-radius: 5px;
+    //color: $color-primary-light;
+    transition: all 250ms;
+    background-image: linear-gradient(to bottom right, $color-primary-light, $color-primary-dark);
+    color: transparent;
+    -webkit-background-clip: text;
+
+    &:hover {
+      background-image: linear-gradient(to bottom right, $color-primary-light, $color-primary-dark);
+      color: $color-white;
+      -webkit-background-clip: padding-box;
+    }
+
+    &--active {
+      background-image: linear-gradient(to bottom right, $color-secondary-light, $color-secondary-dark);
+      color: $color-white;
+      border:none;
+      -webkit-background-clip: padding-box;
+    }
+
+    &--disabled {
+      cursor: not-allowed;
+      background: lighten($color-primary-dark, 30%);
+      border: none;
+      color: $color-white;
+      &:hover {
+        border: none;
+        background: lighten($color-primary-dark, 30%);
+        color: $color-white;
+      }
+    }
+  }
+}

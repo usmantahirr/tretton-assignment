@@ -1,8 +1,15 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Ninja from '../molecules/ninja';
+import Pagination from '../molecules/pagination';
+
+import HomeContext from '../../containers/homeContext';
+import Loader from '../atoms/loader';
 
 const NinjaList = ({ ninjas }) => {
-  if (!ninjas || (ninjas && !ninjas.length)) return <div>No Ninjas Found</div>;
+  const { loading, filters, updateFilters } = useContext(HomeContext);
+  if ((!loading && !ninjas) || (!loading && ninjas && !ninjas.length)) {
+    return <div>No Ninjas Found</div>;
+  }
 
   const rows = [...Array(Math.ceil(ninjas.length / 4))];
   const productRows = rows.map((row, idx) => ninjas.slice(idx * 4, idx * 4 + 4));
@@ -17,7 +24,19 @@ const NinjaList = ({ ninjas }) => {
     </div>
   ));
 
-  return <div>{content}</div>;
+  return (
+    <div>
+      {loading ? <Loader /> : content}
+      <Pagination
+        loading={loading}
+        totalRecords={filters.length}
+        pageSize={filters.pageSize}
+        pageNumber={filters.pageNumber + 1}
+        shouldReset={filters.resetPager}
+        onPageChanged={(pn) => updateFilters(pn - 1)}
+      />
+    </div>
+  );
 };
 
 export default NinjaList;
